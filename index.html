@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset & Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* --- Site Header Styling (Consistent) --- */
+        .site-header {
+            width: 100%;
+            background: linear-gradient(to right, #38a169, #2f855a);
+            padding: 1.5rem 1rem;
+            color: white;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+        .site-header h1 {
+            font-size: 2.25em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        /* --- End Site Header Styling --- */
+
+        /* Form Styles */
+        form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        form h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #333;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .form-group input:focus {
+            border-color: #38a169;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.2);
+        }
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Button Styles */
+        .btn-primary, .btn-secondary {
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, box-shadow 0.2s ease, transform 0.1s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-primary {
+            background-color: #38a169;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2f855a;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: #4a5568;
+        }
+        .btn-secondary:hover {
+            background-color: #cbd5e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            transform: translateY(-1px);
+        }
+
+        /* Error Message Style */
+        .error-message {
+            color: #e53e3e;
+            font-size: 0.875em;
+            margin-top: 4px;
+            min-height: 1.2em;
+        }
+        .error-input {
+            border-color: #e53e3e !important;
+        }
+        .error-input:focus {
+             box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.3);
+        }
+
+        /* My Account Styles */
+        #my-account-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #my-account-form .form-group input {
+            background-color: #f4f4f4;
+            color: #555;
+        }
+        #my-account-form .form-group input:read-only:focus {
+            box-shadow: none;
+            border-color: #e2e8f0;
+        }
+        .link-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .link-list li {
+            display: inline-block;
+            margin: 0 0.75rem;
+        }
+        .link-list a {
+            text-decoration: none;
+            color: #38a169;
+            font-weight: 500;
+        }
+        .link-list a:hover {
+            text-decoration: underline;
+            color: #2f855a;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <h1>Welcome to Essential Mart</h1>
+    </header>
+    <div class="container">
+        <form id="my-account-form">
+            <h2>My Account</h2>
+             <ul class="link-list">
+                <li><a hred="https://audenmnisi.github.io/essential-mart/" target=>Home</a></li>
+                <li><a href="https://audenmnisi.github.io/Signup/" target="_blank">Signup</a></li>
+                <li><a href="https://audenmnisi.github.io/Login/" target="_blank">Login</a></li>
+                <li><a href="https://Facebook.com/audymnisi" target="_blank">Facebook</a></li>
+               
+            </ul>
+            <div class="form-group">
+                <label for="account-name">Full Name:</label>
+                <input type="text" id="account-name" name="account-name" value="" readonly>
+            </div>
+            <div class="form-group">
+                <label for="account-email">Email:</label>
+                <input type="email" id="account-email" name="account-email" value="" readonly>
+            </div>
+            <div class="form-group">
+                <label for="edit-phone">Phone Number:</label>
+                <input type="tel" id="edit-phone" name="edit-phone" value="">
+                <div id="edit-phone-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="edit-address">Address:</label>
+                <input type="text" id="edit-address" name="edit-address" value="">
+                <div id="edit-address-error" class="error-message"></div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Update Profile</button>
+            </div>
+        </form>
+    </div>
+<script>
+    // --- Form Validation ---
+    function validateForm(formId, fields) {
+        const form = document.getElementById(formId);
+        let isValid = true;
+
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            const errorDiv = document.getElementById(`${field}-error`);
+            let isFieldValid = true;
+             const value = input.value.trim();
+
+            if (!value) {
+                isFieldValid = false;
+                errorMessage = `${field.replace('-', ' ')} is required.`;
+            }
+            else if (input.type === 'email' && !/\S+@\S+\.\S+/.test(value)) {
+                isFieldValid = false;
+                errorMessage = 'Please enter a valid email address.';
+            } else if (input.type === 'tel' && !/^\d{3}-\d{3}-\d{4}$/.test(value)) {
+                isFieldValid = false;
+                errorMessage = 'Please use the format XXX-XXX-XXXX for phone number.';
+            }
+
+            if (!isFieldValid) {
+                errorDiv.textContent = errorMessage;
+                input.classList.add('error-input');
+                isValid = false;
+            } else {
+                errorDiv.textContent = '';
+                input.classList.remove('error-input');
+            }
+        });
+        return isValid;
+    }
+    document.getElementById('my-account-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const fields = ['edit-phone', 'edit-address'];
+        if (validateForm('my-account-form', fields)) {
+            alert('Profile Updated Successfully!');
+        }
+    });
+</script>
+</body>
+</html>
